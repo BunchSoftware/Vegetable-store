@@ -1,0 +1,65 @@
+﻿<Window x:Class="Итоговая_аттестация.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Итоговая_аттестация"
+        xmlns:viewModel="clr-namespace:Итоговая_аттестация.ViewModel"
+        ShowInTaskbar="True"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent"
+        Height="450" Width="800" MinHeight="350" MinWidth="300">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="32" UseAeroCaptionButtons="False" ResizeBorderThickness="7"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid x:Name="Grid" Opacity="1">
+        <Border Name="BorderWindow" Background="{DynamicResource BackgroundApp}" BorderBrush="#0079CB">
+            <Border.Effect>
+                <DropShadowEffect  ShadowDepth="0" BlurRadius="8" Color="#0079CB"/>
+            </Border.Effect>
+        </Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+                <Button Style="{StaticResource MinimazedButton}" Name="MinimizedButton" PreviewMouseLeftButtonDown=" MinimizedButton_MouseDown" Grid.Column="2" VerticalAlignment="Top" Width="45" Height="32" WindowChrome.IsHitTestVisibleInChrome="True">
+                </Button>
+                <Button Style="{StaticResource CollapsedButton}" VerticalAlignment="Top" Name="CollapsedButton" PreviewMouseLeftButtonDown="CollapsedButton_MouseDown" Width="45" Height="32" WindowChrome.IsHitTestVisibleInChrome="True"/>
+                <Button Style="{StaticResource ClosedButton}" Name="ClosedButton" PreviewMouseLeftButtonDown="ClosedButton_MouseDown" Grid.Column="4" VerticalAlignment="Top" Width="45" Height="32" WindowChrome.IsHitTestVisibleInChrome="True">
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="5,0,0,0" HorizontalAlignment="Left" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                <TextBlock FontFamily="Cascadia Code" Margin="0,0,0,0" HorizontalAlignment="Center" FontSize="26" Foreground="White" Text="{Binding CurrentNameProduct}"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Command="{Binding BackProductCommand}" Style="{DynamicResource BackButton}" Margin="0,0,15,0" Width="20" Height="20"/>
+                    <Image x:Name="ProductImage"  Width="400" Source="{Binding CurrentUrlProduct}" Height="300"/>
+                    <Button  Command="{Binding ForwardProductCommand}" Style="{DynamicResource ForwardButton}" Margin="15,0,0,0" Width="20" Height="20"/>
+                </StackPanel>
+                <TextBlock FontFamily="Cascadia Code" Margin="0,10,0,0" Foreground="White" HorizontalAlignment="Center" FontSize="20" Text="{Binding CurrentPriceProduct}"/>
+            </StackPanel>
+            <StackPanel Width="300" Margin="0,20,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" Orientation="Vertical">
+                <TextBlock FontFamily="Cascadia Code" Margin="0,0,5,10" HorizontalAlignment="Center" Text="Описание"  FontSize="25" Foreground="White"/>
+                <TextBlock TextWrapping="WrapWithOverflow" FontFamily="Candara"  Height="200" Text="{Binding CurrentDescriptionProduct}" FontSize="16" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Margin="0,260,100,0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" Orientation="Vertical">
+                <TextBlock x:Name="Result" FontFamily="Cascadia Code" HorizontalAlignment="Center" Foreground="White" Text="Итог: 0 ₽" FontSize="18"/>
+                <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Command="{Binding DecreaseAmountCommand}" Style="{DynamicResource BackButton}" Margin="0,0,15,0" Width="20" Height="20"/>
+                    <Border Padding="5" Height="30" BorderBrush="#9f9f9f" CornerRadius="10" BorderThickness="1">
+                        <TextBlock FontFamily="Cascadia Code" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Amount}" Foreground="White" FontSize="15"/>
+                    </Border>
+                    <Button Command="{Binding AddAmountCommand}" Style="{DynamicResource ForwardButton}" Margin="15,0,0,0" Width="20" Height="20"/>
+                </StackPanel>
+                <Button Command="{Binding BuyCommand}"  FontFamily="Cascadia Code"  Style="{DynamicResource BuyButton}" Background="#fea017" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Width="150" Content="Купить"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

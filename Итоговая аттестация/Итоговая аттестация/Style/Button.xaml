@@ -1,0 +1,149 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="ClosedButton" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource BackgroundApp}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Margin="0,1,1,0" Background="{TemplateBinding Background}">
+                        </Border>
+                        <Viewbox Width="16" Height="16">
+                            <Path Width="24" Height="24" Data="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" 
+                                  Fill="White">
+                            </Path>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource BackgroundIsMouseOver}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="CollapsedButton" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource BackgroundApp}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Margin="0,1,0,0" Background="{TemplateBinding Background}"/>
+                        <Path x:Name="Path"  Width="10" Height="10" Stroke="White" StrokeThickness="0.5"
+                                                      Stretch="None" RenderOptions.EdgeMode="Aliased">
+                            <Path.Style>
+                                <Style TargetType="Path">
+                                    <Setter Property="Data" Value="M 0,8 H7 V2 H0.25 V8"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" Value = "Maximized">
+                                            <Setter Property="Data" 
+                                                    Value="M 0,8 H7 V2 H0.25 V8 M 2,2 V0.25 H8.75 V7 H7"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Path.Style>
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
+                                    <TranslateTransform  X="0" Y="-3"/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource BackgroundIsMouseOver}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="MinimazedButton" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource BackgroundApp}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Margin="0,1,0,0" Background="{TemplateBinding Background}"/>
+                        <Path Height="13" Width="9" Stroke="White" StrokeThickness="1"
+                                                      Stretch="None" RenderOptions.EdgeMode="Aliased" Data="M0,8 H8 M0,7 H8 M0,6 H8">
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource BackgroundIsMouseOver}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ForwardButton" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="btnBorderRandom" CornerRadius="20" BorderThickness="1">
+                        <Image>
+                            <FrameworkElement.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Image.Source" Value="\Image\forward-button.png"/>
+                                    <Setter Property="FlowDirection" Value="LeftToRight"/>
+                                </Style>
+                            </FrameworkElement.Style>
+                        </Image>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BackButton" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="btnBorderRandom" CornerRadius="20" BorderThickness="1">
+                        <Image>
+                            <FrameworkElement.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Image.Source" Value="\Image\forward-button.png"/>
+                                    <Setter Property="FlowDirection" Value="RightToLeft"/>
+                                </Style>
+                            </FrameworkElement.Style>
+                        </Image>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BuyButton" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="btnBorder" Background="{TemplateBinding Background}" CornerRadius="10" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" SourceName="btnBorder">
+                            <Setter TargetName="btnBorder" Property="Background" Value="#ed9920"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

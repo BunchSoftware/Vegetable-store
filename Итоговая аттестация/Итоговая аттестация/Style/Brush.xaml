@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ============== BRUSHES ============== -->
+
+    <SolidColorBrush x:Key="DisabledFgBrush" Color="#FF778085"/>
+    <SolidColorBrush x:Key="DisabledBgBrush" Color="#FF373B3E"/>
+    <SolidColorBrush x:Key="DisabledBdBrush" Color="#FF40484F"/>
+    <SolidColorBrush x:Key="DisabledTrackBgBrush" Color="#FF282B2E"/>
+    <SolidColorBrush x:Key="DisabledTrackTransparentBgBrush" Color="#80282B2E"/>
+    <SolidColorBrush x:Key="DisabledCheckBgBrush" Color="#FF638EA4"/>
+    <SolidColorBrush x:Key="NormalFgBrush" Color="#FFA2A8AC"/>
+    <SolidColorBrush x:Key="NormalBgBrush" Color="#FF2B333B"/>
+    <SolidColorBrush x:Key="NormalBdBrush" Color="#FF364049"/>
+    <SolidColorBrush x:Key="OverFgBrush" Color="White"/>
+    <SolidColorBrush x:Key="OverBgBrush" Color="#FF414E58"/>
+    <SolidColorBrush x:Key="OverBdBrush" Color="#FF4F5C68"/>
+    <SolidColorBrush x:Key="PressBgBrush" Color="#FF3A5E79"/>
+    <SolidColorBrush x:Key="PressBdBrush" Color="#FF466E87"/>
+    <SolidColorBrush x:Key="FocusBdBrush" Color="#FF4581A3"/>
+    <SolidColorBrush x:Key="ArrowBackground" Color="White"/>
+    <SolidColorBrush x:Key="CheckTransparentBgBrush" Color="#802B90C5"/>
+    <SolidColorBrush x:Key="TrackBgBrush" Color="#FF23262A"/>
+    <SolidColorBrush x:Key="TrackTransparentBgBrush" Color="#8023262A"/>
+    <SolidColorBrush x:Key="TrackBdBrush" Color="#FF2F353C"/>
+
+    <SolidColorBrush x:Key="BackgroundApp" Color="#353535"/>
+    <SolidColorBrush x:Key="BackgroundIsMouseOver" Color="#626262"/>
+    <SolidColorBrush x:Key="BorderBrushApp" Color="#303030"/>
+    <SolidColorBrush x:Key="BackgroundIsSubmenuOpen" Color="#4C4C4C"/>
+    <SolidColorBrush x:Key="ForegroundApp" Color="White"/>
+    <SolidColorBrush x:Key="ServerOpen" Color="#0d5c22"/>
+    <SolidColorBrush x:Key="ServerClose" Color="#8f1313"/>
+</ResourceDictionary>

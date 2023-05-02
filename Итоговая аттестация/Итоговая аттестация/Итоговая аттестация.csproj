@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Итоговая_аттестация</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Montserrat.ttf" />
+    <None Remove="Image\broad.png" />
+    <None Remove="Image\bulb.png" />
+    <None Remove="Image\cabbage.png" />
+    <None Remove="Image\cucumber.png" />
+    <None Remove="Image\forward-button.png" />
+    <None Remove="Image\milk.png" />
+    <None Remove="Image\sausage.png" />
+    <None Remove="Image\sourcream.png" />
+    <None Remove="Image\tomato.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Montserrat.ttf" />
+    <Resource Include="Image\broad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\bulb.png" />
+    <Resource Include="Image\cabbage.png" />
+    <Resource Include="Image\cucumber.png" />
+    <Resource Include="Image\forward-button.png" />
+    <Resource Include="Image\milk.png" />
+    <Resource Include="Image\sausage.png" />
+    <Resource Include="Image\sourcream.png" />
+    <Resource Include="Image\tomato.png" />
+  </ItemGroup>
+
+</Project>
